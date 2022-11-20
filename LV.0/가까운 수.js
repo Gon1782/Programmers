@@ -1,11 +1,12 @@
 function solution(array, n) {
-    let close = Math.abs(n - array[0]);
-    for (let i = 0; i < array.length; i++) {
-        if (Math.abs(n - array[i]) === 0) {
-            return array[i]
-        } else if (close > Math.abs(n - array[i])) {
-            close = array[i]
+    array.sort((a,b) => a - b);
+    let close = 100;
+    let a = 0
+    for (let i of array) {
+        if (Math.abs(n-i) < close) {
+            close = Math.abs(n-i);
+            a = i;
         }
     }
-    return close
+    return a;
 }
