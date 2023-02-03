@@ -6,12 +6,12 @@ function solution(s, skip, index) {
     skippedAlphabet = skippedAlphabet.replace(i, "");
   }
   skippedAlphabet = skippedAlphabet.split("");
-  const c = s.split("");
-  const d = [];
+  const word = s.split("");
+  const answer = [];
   for (let i = 0; i < c.length; i++) {
-    let e = b.indexOf(c[i]) + index;
-    if (e >= b.length) e %= b.length;
-    d.push(b[e]);
+    let idx = skippedAlphabet.indexOf(word[i]) + index;
+    if (idx >= skippedAlphabet.length) idx %= skippedAlphabet.length;
+    answer.push(skippedAlphabet[idx]);
   }
-  return d.join("");
+  return answer.join("");
 }
