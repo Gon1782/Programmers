@@ -5,6 +5,7 @@ function solution(s, skip, index) {
   for (const i of skipWord) {
     skippedAlphabet = skippedAlphabet.replace(i, "");
   }
+
   skippedAlphabet = skippedAlphabet.split("");
   const word = s.split("");
   const answer = [];
